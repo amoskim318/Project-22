@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Hello, World!</title>
+     <style>
+        *{
+            margin-top:0px;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 4px 3px 2px 1px lavender;
+            position: relative;
+            top: 600px;
+            border-radius: 10px;
+
+        }
+        .container .MyForm{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 10px;
+            padding: 200px;
+        }
+        .container .MyForm .mYheading{
+            display: flex;
+            color: purple;
+        padding: 10px;
+        }
+         .MyName , .Number , .email , .password , .submitBtn{
+padding: 10px;
+width: 100%;
+        }
+        input{
+            display: flex;
+            border: none;
+            border-bottom: 1px solid purple;
+            padding: 10px;
+            outline: none;
+            width: 100%;
+        }
+        .submitBtn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .submitBtn button{
+            display: flex;
+            height: 40px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            font-weight: 900;
+            color: white;
+            border: none;
+            background-color: purple;
+            transition: 0.7s;
+        }
+        .submitBtn button:hover{
+            background-color: transparent;
+            border: 1px solid purple;
+            color: purple;
+        }
+.imageProfile{
+    display: flex;
+    object-fit: contain;
+    width: 100%;
+
+}
+.imageProfile img{
+    display: flex;
+    border-radius: 10px 180px 130px 140px;
+    width: 100%;
+    height: 300px;
+    transition: all 0.9s ease-in-out;
+}
+.imageProfile img:hover{
+    border-radius: 100px 80px 430px 40px;
+opacity: 0.5;
+}
+p{
+    padding: 10px;
+}
+.loader {
+    position: absolute;
+    top: 40%;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid purple;
+    width: 160px;
+    height: 160px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    display: none;
+    z-index: 12;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+@media screen and (max-width : 800px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .loader{
+        display: none;
+    }
+}
+    </style>
+  <script>
+  
+        function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const user = document.getElementById('user').value;
+            if (email === 'amoskim028@gmail.com' && password === 'amoskim' && user === 'amoskim') {
+                window.location.href = 'index.html';
+            } else{
+              alert('Invalid email , password or user');
+            }
+            
+        }
+  </script>
+</head>
+<body>
+  <div class="loader" id="loader"></div>
+<div class="container" id="container">
+        <div class="imageProfile">
+        <img src="/Picsart_25-05-27_19-13-06-416.jpg">
+    </div>
+      <div class="MyForm">
+        <div class="mYheading">
+            <h1>
+                Fill The login
+            </h1>
+        </div>
+            <form onsubmit="event.preventDefault(); login();">
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" required placeholder="example@gmail.com"><br>
+        
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" required><br><br>
+                <label for="user">user</label><br>
+                <input type="user" id="user" required  placeholder="username"><br>
+              <div class="submitBtn">
+        <button type="submit">Login</button>
+              </div>
+    </form>
+    </div>
+    </div>
+</body>
+</html>
